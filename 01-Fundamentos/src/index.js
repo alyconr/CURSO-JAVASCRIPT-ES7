@@ -113,4 +113,6 @@ console.log(a ?? c); // "default" (a es null)
 // ?? es útil para proporcionar un valor predeterminado solo cuando el valor es null o undefined,
 //  a diferencia de || que considera falsy (como 0, "", false) como valores que también activan el valor predeterminado.
 
+console.log(0 || "default"); // "default" (0 es falsy)
+
 
