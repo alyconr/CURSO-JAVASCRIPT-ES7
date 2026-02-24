@@ -143,7 +143,7 @@ if (edad >= 18) {
 
 console.log(edad >= 18 ? "Eres mayor de edad" : "Eres menor de edad"); // operador ternario
 
-// for loop
+// for loop  SE USA CUANDO SABES CUANTAS VECES QUIERES REPETIR UN BLOQUE DE CÓDIGOS
 
 for (let i = 0; i < 5; i++) {
     console.log(i);
@@ -157,3 +157,72 @@ for (let i = 0; i < gastos.length; i++) {
 }
 
 console.log(`Total de gastos: ${totalGastos}`);
+
+
+//WHILE SE USA CUANDO NO SABES CUANTAS VECES QUIERES REPETIR UN BLOQUE DE CÓDIGOS
+
+let contador = 0;
+while (contador < 5) {
+    console.log(contador);
+    contador++;
+}
+
+//FUNCIONES , LAS FUNCIONES SON BLOQUES DE CÓDIGOS QUE REALIZAN UNA TAREA ESPECÍFICA Y PUEDEN SER REUTILIZADOS
+
+function saludar(nombre) {
+    return `Hola, ${nombre}!`;
+}
+
+console.log(saludar("Alice"));
+
+// ERRORES  Y NANEJO BASICO DE ERRORES
+
+
+
+try {
+    console.log(dividir(10, 0));
+} catch (error) {
+    console.error("Ocurrió un error:", error.message); // Manejo del error
+}
+
+
+// funcion dividir con try catch dentro de la funcion
+
+function dividirConManejo(a, b) {
+  try {
+    // Validaciones básicas
+    if (typeof a !== "number" || typeof b !== "number" || Number.isNaN(a) || Number.isNaN(b)) {
+      throw new Error("Ambos valores deben ser números válidos");
+    }
+
+    if (b === 0) {
+      throw new Error("No se puede dividir por cero");
+    }
+
+    // Si todo está OK, retornamos la división
+    return a / b;
+
+  } catch (error) {
+    console.error("Ocurrió un error:", error.message);
+    return null; // Indica que no se pudo realizar la división
+  }
+}
+
+console.log(dividirConManejo(10, 0));   // null
+console.log(dividirConManejo(10, 2));   // 5
+console.log(dividirConManejo("10", 2)); // null
+
+
+// deouracion de funciones
+
+// conos.table.log() es una función que se utiliza para imprimir mensajes en la consola del navegador o del entorno de desarrollo. 
+// Es muy útil para depurar código y verificar el valor de variables en diferentes puntos de la ejecución.
+
+const report= { ingreso: 5000000, gasto: 450000, balance: 4550000 };
+console.table(report); // Imprime el objeto report en formato de tabla en la consola
+
+console.group("Reporte financiero"); // Inicia un grupo en la consola
+console.log(`Ingreso: ${report.ingreso}`);
+console.log(`Gasto: ${report.gasto}`);
+console.log(`Balance: ${report.balance}`);
+console.groupEnd(); // Finaliza el grupo en la consola
