@@ -49,3 +49,11 @@ console.log(foodExpenses); // Imprime [{ amount: 50, category: "food" }, { amoun
 const totalFoodExpense = foodExpenses.reduce((total, expense) => total + expense.amount, 0);
 // reduce acumula un valor a través de los elementos del array, en este caso sumando los montos de los gastos de comida
 console.log(totalFoodExpense); // Imprime 80
+
+// map filter reduce son métodos muy poderosos para trabajar con arrays de manera funcional y evitar mutaciones.
+// ejemplo de map y filter juntos
+const numbers = [1, 2, 3, 4, 5];
+const evenSquares = numbers
+  .filter((num) => num % 2 === 0) // Filtra los números pares
+  .map((num) => num * num); // Luego mapea esos números al cuadrado
+console.log(evenSquares); // Imprime [4, 16]
