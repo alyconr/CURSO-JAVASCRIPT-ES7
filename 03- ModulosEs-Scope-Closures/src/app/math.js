@@ -14,6 +14,7 @@ export function clamp(value, min, max) {
     // el valor minimo si el valor es menor al minimo
     // o el valor maximo si el valor es mayor al maximo
   }
+
 }
 
 // redondear  a digitos decimales
@@ -28,22 +29,7 @@ export function roundTo(value, decimals) {
     }
 
     return Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals);
-}
-
-// redondear a digitops decimales
-
-export function roundTo(value, digits= 2){ 
-    if (!Number.isFinite(value) || !Number.isFinite(digits)) {
-        throw new TypeError("Todos los argumentos deben ser números finitos.");
-    }
-
-    if (digits < 0) {
-        throw new Error("Los decimales deben ser un número no negativo.");
-    }
-
-    return Math.round(value * Math.pow(10, digits)) / Math.pow(10, digits); // retorna
-    // el valor redondeado a la cantidad de decimales especificada
-
+    
 }
 
 // funcion que retorna un numero aleatorio entre min y max
