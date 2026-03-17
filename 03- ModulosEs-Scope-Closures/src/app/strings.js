@@ -26,6 +26,6 @@ function toNoEmptyString (value, label = 'texto') {
         .split(' ') // Dividir en palabras hola mundo -> ["hola", "mundo"]
         .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalizar la primera letra de cada palabra
         .join(' '); // Unir las palabras de nuevo en una cadena
-
+}
 //funcion slugify, funcion que permite convertir un string a slug ejemplo:
 //  "hola mundo" - "hola-mundo"
